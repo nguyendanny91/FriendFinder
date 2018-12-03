@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Page</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Survey Questions</h2>
+        <hr>
+        <h3><strong>About You</strong></h3>
+        <form>
+            <div class="form-group">
+                <h4 for="inputName">Name (Required)</h4>
+                <input type="text" class="form-control" id="inputName">
+            </div>
+            <div class="form-group">
+                <h4 for="inputPhoto">Link to Photo Image (Required)</h4>
+                <input type="text" class="form-control" id="inputPhoto">
+            </div>
+            <hr>
+            <div class="form-group">
+                <h3><strong>Question 1</strong></h3>
+                <h4>You are a confrontational person</h4>
+                <select class="chosen" question_number="Q1">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 2</strong></h3>
+                <h4>People generally enjoy your presence</h4>
+                <select class="chosen" question_number="Q2">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 3</strong></h3>
+                <h4>You enjoy having people around you more than being on your own</h4>
+                <select class="chosen" question_number="Q3">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 4</strong></h3>
+                <h4>Silence makes you uncomfortable</h4>
+                <select class="chosen" question_number="Q4">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 5</strong></h3>
+                <h4>You are a compulsive liar</h4>
+                <select class="chosen" question_number="Q5">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 6</strong></h3>
+                <h4>You would prefer going to Hawaii over going to Vegas</h4>
+                <select class="chosen" question_number="Q6">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 7</strong></h3>
+                <h4>"Going with the flow.." is your kind of style</h4>
+                <select class="chosen" question_number="Q7">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 8</strong></h3>
+                <h4>You rarely get carried away with fantasis/ideas</h4>
+                <select class="chosen" question_number="Q8">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 9</strong></h3>
+                <h4>You would rather lie than tell the truth to protect someone else's feelings</h4>
+                <select class="chosen" question_number="Q9">
+                </select>
+            </div>
+            <div class="form-group">
+                <h3><strong>Question 10</strong></h3>
+                <h4>It's difficult for you to relate to other people's feelings</h4>
+                <select class="chosen" question_number="Q10">
+                </select>
+            </div>
+            <button type='submit' class="btn btn-primary btn-lg btn-block" id="submit"><span class="fa fa-check-circle"></span> Submit</button>
+        </form>
+
+        <hr>
+
+
+
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friendsGET">API Friends List</a> | <a href="https://github.com/nguyendanny91/FriendFinder">GitHub
+                        Repo</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var Questions;
+
+        var chosen = $(".chosen")
+        chosen.attr("data-placeholder", "Select an option")
+        chosen.attr("style", "width: 155px")
+        chosen.append(
+            '<option value=""></option>' +
+            '<option value="1">1 (Strongly Agree)</option>' +
+            '<option value="2">2</option>' +
+            '<option value="3">3</option>' +
+            '<option value="4">4</option>' +
+            '<option value="5">5 (Strongly Disagree)</option>'
+        )
+
+        chosen.chosen();
+
+        $(".btn").click(function (e) {
+            e.preventDefault()
+
+            Questions = {
+                Q1: $("[question_number='Q1'] option:selected").val(),
+                Q2: $("[question_number='Q2'] option:selected").val(),
+                Q3: $("[question_number='Q3'] option:selected").val(),
+                Q4: $("[question_number='Q4'] option:selected").val(),
+                Q5: $("[question_number='Q5'] option:selected").val(),
+                Q6: $("[question_number='Q6'] option:selected").val(),
+                Q7: $("[question_number='Q7'] option:selected").val(),
+                Q8: $("[question_number='Q8'] option:selected").val(),
+                Q9: $("[question_number='Q9'] option:selected").val(),
+                Q10: $("[question_number='Q10'] option:selected").val(),
+                QName: $("#inputName").val(),
+                QImage: $("#inputPhoto").val()
+            }
+
+            if (
+                Questions.Q1 === "" ||
+                Questions.Q2 == "" ||
+                Questions.Q3 == "" ||
+                Questions.Q4 == "" ||
+                Questions.Q5 == "" ||
+                Questions.Q6 == "" ||
+                Questions.Q7 == "" ||
+                Questions.Q8 == "" ||
+                Questions.Q9 == "" ||
+                Questions.Q10 == "" ||
+                Questions.QName == "" ||
+                Questions.QImage == ""
+            ) {
+                alert("Please fill out all fields before submitting!")
+            } else {
+                postFriends(Questions)
+            }
+
+        })
+
+        function postFriends(Questions) {
+            $.post("/api/friendsPOST", Questions,
+                function (data) {
+
+                    // If a table is available... tell user they are booked.
+                    if (data) {
+                        alert("Yay! You are officially booked!");
+                    }
+
+                    // If a table is available... tell user they on the waiting list.
+                    else {
+                        alert("Sorry we ran into some issues..");
+                    }
+
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>
