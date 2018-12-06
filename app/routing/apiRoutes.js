@@ -39,8 +39,6 @@ module.exports = function (app) {
 
         var indexofFriend = friendTally.indexOf(Math.min(...friendTally))
 
-        console.log(friendsData[indexofFriend])
-
         friendsData.push(req.body);
         res.json(friendsData[indexofFriend]);
     });

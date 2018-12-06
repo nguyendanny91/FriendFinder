@@ -195,14 +195,10 @@
         function postFriends(Questions) {
             $.post("/api/friendsPOST", Questions,
                 function (data) {
-
-                    // console.log(data)
                     $('.personSelected').text(data.QName)
                     $('.personImg').attr("src",data.QImage)
                     $('#returnModal').modal('toggle')
                     
-                    
-
                 });
         }
 
