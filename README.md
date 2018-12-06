@@ -27,7 +27,7 @@ In this repository I created a "FriendFinder" application using Node modules suc
 1. Home Page
     1. Home page will allow user to be routed to Survey page or view all friend submissions via hyperlink
 
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562826-fa89fa80-f8d1-11e8-80d1-d0dec4f02769.png)
+![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562826-fa89fa80-f8d1-11e8-80d1-d0dec4f02769.png)
 
 
 2. Survey Page
@@ -36,8 +36,21 @@ In this repository I created a "FriendFinder" application using Node modules suc
 
 
 ```
-node bamazonCustomer.js
+How Friends are determined: 
+Each user's results are converted into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
+With that done, the difference between the current user's scores are compared against those from other submissions, question by question. The differences are then tallied for the user versus the others.
+
+
+Example: 
+User Input: [1, 1 ,1]
+
+Other 1: [5, 1, 4]
+
+Other 2: [3, 2, 1]
+
+Total Difference Between Other 1 and Input: [4 + 0 + 3] = 7
+Total Difference Between Other 2 and Input: [2 + 1 + 0] = 3 <-- this user will be selected to be the 'friend' of the user
 ```
 
 
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562827-fa89fa80-f8d1-11e8-876a-a7dbff8858e6.png)
+![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562827-fa89fa80-f8d1-11e8-876a-a7dbff8858e6.png)
