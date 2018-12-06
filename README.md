@@ -25,17 +25,19 @@ In this repository I created a "FriendFinder" application using Node modules suc
 ## Examples
 
 1. Home Page
-  1. Home page will allow user to be routed to Survey page or view all friend submissions via hyperlink
+  ** Home page will allow user to be routed to Survey page or view all friend submissions via hyperlink
 
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562826-fa89fa80-f8d1-11e8-80d1-d0dec4f02769.png)]
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562826-fa89fa80-f8d1-11e8-80d1-d0dec4f02769.png)
 
 
 2. Survey Page
-  1. User is able to complete template for details about themselves
-  2. System will return the most compatible friend after they click 'Submit'
+  ** User is able to complete template for details about themselves
+  **  System will return the most compatible friend after they click 'Submit'
 
 
 ```
 node bamazonCustomer.js
 ```
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562827-fa89fa80-f8d1-11e8-876a-a7dbff8858e6.png)]
+
+
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562827-fa89fa80-f8d1-11e8-876a-a7dbff8858e6.png)
