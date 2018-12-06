@@ -25,14 +25,14 @@ In this repository I created a "FriendFinder" application using Node modules suc
 ## Examples
 
 1. Home Page
-  ** Home page will allow user to be routed to Survey page or view all friend submissions via hyperlink
+    1. Home page will allow user to be routed to Survey page or view all friend submissions via hyperlink
 
 [![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/41662459/49562826-fa89fa80-f8d1-11e8-80d1-d0dec4f02769.png)
 
 
 2. Survey Page
-  ** User is able to complete template for details about themselves
-  **  System will return the most compatible friend after they click 'Submit'
+    1. User is able to complete template for details about themselves
+    2. System will return the most compatible friend after they click 'Submit'
 
 
 ```
