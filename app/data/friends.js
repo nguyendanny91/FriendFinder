@@ -1,17 +1,17 @@
 var friendsArray = [
     {
-      friendName: "Danny",
-      friendPhotoURL: "test",
-      Question1: 1,
-      Question2: 2,
-      Question3: 3,
-      Question4: 3,
-      Question5: 3,
-      Question6: 3,
-      Question7: 3,
-      Question8: 3,
-      Question9: 3,
-      Question10: 3,
+      Q1: 100,
+      Q2: 100,
+      Q3: 100,
+      Q4: 100,
+      Q5: 100,
+      Q6: 100,
+      Q7: 100, 
+      Q8: 100,
+      Q9: 100,
+      Q10: 100,
+      QName: "Dwayne Johnson",
+      QImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/WWE_-_Sheffield_020499_%2849%29.jpg/170px-WWE_-_Sheffield_020499_%2849%29.jpg"
     }
   ];
 
