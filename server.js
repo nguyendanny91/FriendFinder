@@ -1,7 +1,7 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-var PORT = 3000 || process.env.PORT;
+var PORT = process.env.PORT || 3000;
 
 var app = express()
 
